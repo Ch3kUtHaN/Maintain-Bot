@@ -41,7 +41,7 @@ BOT_BUTTONS = InlineKeyboardMarkup(
 )
 
 
-@Bot.on_message(filters.private)
+@Bot.on_message(filters.private.command(["start"]))
 async def start(bot, update):
     text = BOT_TEXT.format(update.from_user.mention)
     reply_markup = BOT_BUTTONS
